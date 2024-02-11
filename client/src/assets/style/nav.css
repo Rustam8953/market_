@@ -1,0 +1,30 @@
+:root {
+  --bg-color: #f6f6f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.nav-link {
+  height: auto;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+nav {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.row > * {
+  width: auto;
+}

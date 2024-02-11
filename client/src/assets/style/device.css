@@ -1,0 +1,21 @@
+.device-info {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+  padding: 16px;
+}
+.device-info span {
+  display: flex;
+  width: 49%;
+}
+.device-info__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.device-info__item span {
+  padding-bottom: 5px;
+}
+.device-info__item span:first-child {
+  border-bottom: 1px dotted #ddd;
+}
