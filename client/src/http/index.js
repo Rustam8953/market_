@@ -1,11 +1,12 @@
 import axios from 'axios';
+import { BACK_PATH } from '../utils/consts';
 
 const $host = axios.create({
-    baseURL: 'http://localhost:3001/'
+    baseURL: BACK_PATH
 });
 
 const $authHost = axios.create({
-    baseURL: 'http://localhost:3001/'
+    baseURL: BACK_PATH
 });
 
 const authInterceptor = config => {

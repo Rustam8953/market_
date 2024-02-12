@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { Container, Col } from 'react-bootstrap';
+import { Container, Col, Button } from 'react-bootstrap';
 import TypeBar from '../components/TypeBar';
 import BrandBar from '../components/BrandBar';
 import DeviceList from '../components/DeviceList';
@@ -7,6 +7,7 @@ import { observer } from 'mobx-react-lite';
 import { Context } from '..';
 import { fetchBrands, fetchDevices, fetchTypes } from '../http/deviceApi';
 import Pages from '../components/Pages';
+import '../assets/style/root.css';
 import '../assets/style/shop.css';
 
 const Shop = observer(() => {
@@ -28,7 +29,12 @@ const Shop = observer(() => {
   return (
     <Container>
       <div className="mt-3 d-flex" style={{gap: 15}}>
-        <Col md={3}><TypeBar /></Col>
+        <Col md={3}>
+          <div className='shop-filter'>
+            <TypeBar />
+            <Button onClick={() => device.setSelectedType({})} >Сбросить фильтр</Button>
+          </div>
+        </Col>
         <Col md={9} className="shop-content">
           <BrandBar />
           <DeviceList />

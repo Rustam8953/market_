@@ -10,6 +10,25 @@
     }
 }
 
+.shop {
+    &-filter {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow);
+        & button {
+            width: 100%;
+            &, &:hover {
+                background-color: var(--diagree);
+                border-color: transparent;
+            }
+            &:active {
+                border-color: transparent !important;
+                background-color: var(--diagree-active) !important;
+            }
+        }
+    }
+}
+
 .brand {
     margin-bottom: 10px;
     padding: 16px 12px;
@@ -19,9 +38,24 @@
         height: 40px;
         border-radius: 8px;
         background-color: #f7f7f7;
-        padding: 5px 10px;
+        padding: 10px;
         &[active='active'] {
             opacity: .7;
+        }
+    }
+}
+
+.type {
+    &-bar {
+        padding: 5px 10px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border-radius: 5px;
+        &.active {
+            background-color: var(--blue);
+            color: #fff;
         }
     }
 }

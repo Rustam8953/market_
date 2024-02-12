@@ -1,0 +1,7 @@
+:root {
+    --box-shadow: 0 1px 2px 0 rgba(0,0,0,.16);
+    --bg-color: #f6f6f6;
+    --diagree: rgb(68, 11, 11);
+    --diagree-active: rgb(162, 26, 26);
+    --blue: #0d6efd;
+}

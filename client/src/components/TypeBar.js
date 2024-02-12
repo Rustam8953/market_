@@ -5,17 +5,19 @@ import { Context } from '..';
 
 const TypeBar = observer(() => {
     const {device} = useContext(Context);
+    const filterFunc = (type) => {
+        device.setSelectedType(type);
+    }
     return (
         <ListGroup>
             {device.types.map(type =>
-                <ListGroup.Item
+                <div
                 style={{cursor: 'pointer'}}
-                active={type.id === device.selectedType.id}
-                onClick={() => {
-                    device.setSelectedType(type)
-                    console.log(device.selectedType)
-                }}
-                key={type.id}>{type.name}</ListGroup.Item>
+                onClick={() => filterFunc(type)}
+                key={type.id}
+                className={type.id === device.selectedType.id ? 'type-bar active' : 'type-bar'}>
+                    {type.name}
+                </div>
             )}
         </ListGroup>
     );
