@@ -1,14 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container, Col, Image, Row, Card, Button } from 'react-bootstrap';
 import BigStar from '../assets/bigStar.png';
 import { useParams } from 'react-router-dom';
 import { fetchOneDevice } from '../http/deviceApi';
 import '../assets/style/device.css';
+import { Context } from '..';
 
 const DevicePage = () => {
   const [device, setDevice] = useState({info: []});
+  const {deviceNode} = useContext(Context);
   const {id} = useParams();
-  console.log(device.info);
+  const getLocal = localStorage.getItem('_last');
+  
+  let lastList = [];
+  lastList.push(Number(id));
+
+  if(getLocal) JSON.parse(getLocal).forEach(i => lastList.push(i));
+  else localStorage.setItem('_last', '');
+  
+  const newArr = lastList.reduce((a, b) => {
+    if (!a.includes(b)) a.push(b);
+    return a;
+  }, [])
+  localStorage.setItem('_last', JSON.stringify(newArr));
+
   useEffect(() => {
     fetchOneDevice(id).then(data => setDevice(data))
   }, [])

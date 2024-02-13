@@ -9,6 +9,7 @@ import { fetchBrands, fetchDevices, fetchTypes } from '../http/deviceApi';
 import Pages from '../components/Pages';
 import '../assets/style/root.css';
 import '../assets/style/shop.css';
+import LastList from '../components/LastList';
 
 const Shop = observer(() => {
   const {device} = useContext(Context);
@@ -41,6 +42,7 @@ const Shop = observer(() => {
           <Pages />
         </Col>
       </div>
+      <LastList />
     </Container>
   );
 })

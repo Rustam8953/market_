@@ -5,6 +5,7 @@ export default class DeviceStore {
         this._types = []
         this._brands = []
         this._devices = []
+        this._fullDevice = []
         this._selectedType = {};
         this._selectedBrand = {}
         this._page = 1
@@ -39,6 +40,9 @@ export default class DeviceStore {
     setLimit(limit) {
         this._limit = limit;
     }
+    setFullDevice(fulldevice) {
+        this._fullDevice = fulldevice;
+    }
 
     get types() {
         return this._types
@@ -63,5 +67,8 @@ export default class DeviceStore {
     }
     get limit() {
         return this._limit;
+    }
+    get fullDevice() {
+        return this._fullDevice;
     }
 }
