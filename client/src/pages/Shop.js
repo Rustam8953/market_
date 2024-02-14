@@ -26,7 +26,8 @@ const Shop = observer(() => {
       device.setDevice(data.rows)
       device.setTotalCount(data.count)
     })
-  }, [device.page, device.selectedType, device.selectedBrand])
+  }, [device.page, device.selectedType, device.selectedBrand]);
+  const localLastProuct = JSON.parse(localStorage.getItem('_last'));
   return (
     <Container>
       <div className="mt-3 d-flex" style={{gap: 15}}>
@@ -42,7 +43,7 @@ const Shop = observer(() => {
           <Pages />
         </Col>
       </div>
-      <LastList />
+      {localLastProuct && localLastProuct.length > 0 && <LastList />}
     </Container>
   );
 })

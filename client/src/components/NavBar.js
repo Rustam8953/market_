@@ -4,9 +4,7 @@ import {Container} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import {observer} from 'mobx-react-lite'
-import UserStore from '../store/UserStore';
 import { useNavigate } from 'react-router-dom';
 import { ADMIN_ROUTE, CART_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../utils/consts';
 import '../assets/style/nav.css';
@@ -38,7 +36,9 @@ const NavBar = observer(() => {
                                 <Button onClick={() => navigate(ADMIN_ROUTE)}>Admin</Button>
                             </Nav.Link>
                             <Nav.Link>
-                                <Button onClick={() => logOut()}>Выйти</Button>
+                                <Button onClick={() => logOut()}>
+                                    Выйти
+                                </Button>
                             </Nav.Link>
                         </Nav>
                         :
@@ -50,7 +50,7 @@ const NavBar = observer(() => {
                             <Nav.Link href={SHOP_ROUTE}>Home</Nav.Link>
                             <Nav.Link href={CART_ROUTE}>Cart</Nav.Link>
                             <Nav.Link>
-                                <Button onClick={() => navigate(LOGIN_ROUTE)}>Войти</Button>
+                                <Button onClick={() => navigate(LOGIN_ROUTE)}>Войти <i class="bi bi-person-circle"></i></Button>
                             </Nav.Link>
                         </Nav>
                     }
